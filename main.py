@@ -1,6 +1,12 @@
 import time
+def sleep():
+    print("\033[1;34;40mİşleminiz Gerçekleştiriliyor Lütfen Bekleyiniz...\033[0;35;39m")
+    time.sleep(2)
+    print("\n" * 100)
 def tekrar(a): #İşlem sonrası ekran fonksiyon
     b = int(input("0-Çıkış Yap\n1-Farklı İşlemler\nYapmak İstediğiniz İşlemi Tuşlayınız:"))
+    sleep()
+    print("\n" * 100)
     while b != 1 and b != 0:
         b = int(input("0-Çıkış Yap\n1-Farklı İşlemler\nHatalı Tuşlama! Yapmak İstediğiniz İşlemi Tekrar Tuşlayınız:"))
     return b
@@ -48,9 +54,10 @@ while y:
                 else:
                     k += 1
                     if k == 9:
+                        sleep()
                         print("\033[1;31;40mHatalı Kullanıcı Adı veya Şifre(Kalan Hak sayısı:{}\033[0;35;39m)".format(j)) #Hata
                         if(j == 0):
-                            print("Art Arda Çok Fazla İşlem Gerçekleştirdiniz İşlem Sonlandırılıyor...")
+                            print("Art Arda Çok Fazla Hatalı İşlem Gerçekleştirdiniz İşlem Sonlandırılıyor...")
                             time.sleep(3)
                             exit(0)
                         j -= 1
@@ -66,33 +73,44 @@ while y:
         d.writelines(temp)
         d.flush()
     elif p_islem == 0:
+        sleep()
+        print("\033[1;35;40mİyi Günler Dileriz\033[0;35;39m")
         exit(0)
     else:
         print("Hatalı Tuşlama")
 
 if check == 1: #Sistem İçi
+    time.sleep(1)
     print("\033[1;33;40mHoşgeldiniz {} {}\033[0;35;39m".format(name_check,s_name_check))
     while x:
         print("İşlemler:\n1-Bakiye Sorgulama\n2-Para Çekme\n3-Para Yatırma\n0-Çıkış")
         islem = int(input("Lütfen Yapmak İstediğiniz İşleri Rakamlar İle Belirtiniz:"))
         if 1 == islem:
+            sleep()
             print("Bakiyeniz:", bakiye)
             x = tekrar(x)
         elif 2 == islem:
             tutar = int(input("Çekmek İstediğiniz Tutarı Giriniz:"))
+            sleep()
             while tutar > bakiye:
-                print("Bakiye Yetersiz")
-                tutar = int(input("Çekmek İstediğiniz Tutarı Giriniz:"))
+                print("\033[0;31;40mBakiye Yetersiz\033[0;35;39m")
+                tutar = int(input("Çekmek İstediğiniz Tutarı Giriniz(0-Geri Gel):"))
+                if tutar == 0:
+                    x = 1
+                    break
             bakiye -= tutar
             print("Yeni Bakiyeniz:", bakiye)
             x = tekrar(x)
         elif 3 == islem:
             tutar = int(input("Yatırmak İstediğiniz Tutarı Giriniz:"))
+            sleep()
             bakiye += tutar
             print("Yeni Bakiyeniz:", bakiye)
             x = tekrar(x)
         elif 0 == islem:
+            sleep()
+            print("\033[1;33;40mHoşçakalın {} {}\033[0;35;39m".format(name_check,s_name_check))
             x = 0
         else:
-            print("Hatalı İşlem")
+            print("\033[1;31;40mHatalı İşlem\033[0;35;39m")
             x = tekrar(x)

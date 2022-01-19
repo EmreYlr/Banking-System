@@ -7,7 +7,7 @@ d = open("data.txt", "a")
 d.writelines(temp)
 d.flush()
 
-
+# Kayıt Paneli Deneme Yeri
 """d.write('\n')
 d.write(name)
 d.write('+')
