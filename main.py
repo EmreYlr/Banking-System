@@ -1,5 +1,5 @@
 import time
-def sleep():
+def sleep(): # Bekleme ekranı
     print("\033[1;34;40mİşleminiz Gerçekleştiriliyor Lütfen Bekleyiniz...\033[0;35;39m")
     time.sleep(2)
     print("\n" * 100)
