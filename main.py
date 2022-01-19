@@ -54,7 +54,7 @@ while y:
                             time.sleep(3)
                             exit(0)
                         j -= 1
-        f.close()
+        f.close() #Dosyadan çıkış
 
     elif p_islem == 2: #Kayıt Yeri
         name = input("İsim:")
