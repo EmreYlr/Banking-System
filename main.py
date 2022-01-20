@@ -162,7 +162,7 @@ if check == 1: #Sistem İçi
             transfer = int(input("Ne Kadar göndermek istersiniz:"))
             alici = input("Göndermek İstediğiniz Kişinin İban'ını Giriniz:")
             f_1 = open("data.txt", "r")
-            if transfer < sum_2:
+            if transfer < sum_2 and alici != iban:
                 while k < 10:
                     file = f_1.readline()
                     while i < len(file):  # Ayrımları Bulur
@@ -215,9 +215,14 @@ if check == 1: #Sistem İçi
                         break
                     else:
                         k += 1
+                        if k == 9:
+                            sleep()
+                            print("\033[1;31;40mHatalı İban Numarası\033[0;35;39m")  # Hata
+                            x = tekrar(x)
+
             else:
                 sleep()
-                print("\033[1;31;40mYetersiz Bakiye\033[0;35;39m")
+                print("\033[1;31;40mYetersiz Bakiye veya Kişisel İban'ınızı Girdiniz\033[0;35;39m")
                 x = tekrar(x)
 
         elif 0 == islem:
