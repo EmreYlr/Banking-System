@@ -1,3 +1,4 @@
 Mehmet+Yılmaz-mali/456*72832=1250%
 ali+veli-aliveli/1327*77893=1620%
-Emre+Can-Emrecan/123*12345=2330%
+Emre+Can-Emrecan/123*1/*12345=2630%
+Hilal+Yeler-yelerhilal/1327*84394=700%

@@ -107,10 +107,13 @@ while y:
         id = input("Kullanıcı Adi:")
         pas = input("Şifre:")
         iban = str(random.randint(9999,100000)) #int olarak alındığında hata veriyor !
-        temp = ["\n", name, '+', s_name, '-', id, '/', pas, '*', iban, '=', str(bakiye)]
+        temp = ["\n", name, '+', s_name, '-', id, '/', pas, '*', iban, '=', str(bakiye), '%']
         d = open("data.txt", "a")
         d.writelines(temp)
         d.flush() #Bilgileri anında dosyaya göndermek için kullanılır
+        sleep()
+        print("\033[0;32;40mKaydınız Başarılı Bir Şekilde Gerçekleştirilmiştir\033[0;35;39m")
+
     elif p_islem == 0:
         sleep()
         print("\033[1;35;40mİyi Günler Dileriz\033[0;35;39m")
